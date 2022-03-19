@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { MultipleCustomHooks } from './components/examples/MultipleCustomHooks';
+// import { FocusScreen } from './components/useRef/FocusScreen';
+import { RealExampleRef } from './components/useRef/RealExampleRef';
+// import { MultipleCustomHooks } from './components/examples/MultipleCustomHooks';
 // import { FormWithCustomHook } from './components/useEffect/FormWithCustomHook';
 // import { SimpleForm } from './components/useEffect/SimpleForm';
 // import { CounterWithCustomHook } from './components/useStates/CounterWithCustomHook';
@@ -8,6 +10,6 @@ import { MultipleCustomHooks } from './components/examples/MultipleCustomHooks';
 // import { HookApp } from './HookApp';
 
 ReactDOM.render(
-    <MultipleCustomHooks />,
+    <RealExampleRef/>,
     document.getElementById('root')
 );
