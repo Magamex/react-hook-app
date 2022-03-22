@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { MemoHook } from './components/memos/MemoHook';
+// import { CallbackHook } from './components/memos/CallbackHook';
+import { Padre } from './components/tarea/Padre';
+// import { MemoHook } from './components/memos/MemoHook';
 // import { Memorize } from './components/memos/Memorize';
 // import { Layout } from './components/useLayoutEffect/Layout';
 // import { FocusScreen } from './components/useRef/FocusScreen';
@@ -13,6 +15,6 @@ import { MemoHook } from './components/memos/MemoHook';
 // import { HookApp } from './HookApp';
 
 ReactDOM.render(
-    <MemoHook/>,
+    <Padre/>,
     document.getElementById('root')
 );
