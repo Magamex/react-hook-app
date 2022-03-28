@@ -1,10 +1,10 @@
 import React, { useEffect, useReducer } from "react";
 import { todoReducer } from "./todoReducer";
-import { useForm } from "../../Hooks/useForm";
+
+import { TodoList } from "./TodoList";
+import { TodoAdd } from "./TodoAdd";
 
 import "../../styles.css";
-import { TodoList } from "./TodoList";
-
 const init = () => {
   return JSON.parse(localStorage.getItem("todos")) || [];
   // return [{
@@ -17,9 +17,7 @@ const init = () => {
 export const TodoApp = () => {
   const [todos, dispatch] = useReducer(todoReducer, [], init);
 
-  const [{ description }, handleInputChange, reset] = useForm({
-    description: "",
-  });
+  
 
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
@@ -40,43 +38,17 @@ export const TodoApp = () => {
     });
   };
 
-  console.log(description);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (description.trim().length <= 1) {
-      return;
-    }
-
-    const newTodo = {
-      id: new Date().getTime(),
-      desc: description,
-      done: false,
-    };
-
-    const action = {
+  const handleAdd = (newTodo) => {
+    dispatch({
       type: "add",
       payload: newTodo,
-    };
-    dispatch(action);
-    reset();
-  };
+    });
+  }
 
   return (
     <div>
       <h1>TodoApp ({todos.length})</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="description"
-          placeholder="tarea"
-          autoComplete="off"
-          value={description}
-          onChange={handleInputChange}
-        />
-        <button type="submit">Agregar</button>
-      </form>
+      <TodoAdd handleAdd={handleAdd}/>
       <hr />
 
       <TodoList
