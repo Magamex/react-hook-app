@@ -1,4 +1,4 @@
-import { todoReducer } from './../../../components/useReducer/todoReducer';
+import { todoReducer } from '../../components/useReducer/todoReducer';
 
 const demoTodos = [{
     id:1,
