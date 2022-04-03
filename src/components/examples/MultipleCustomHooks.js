@@ -21,7 +21,7 @@ export const MultipleCustomHooks = () => {
         { 
             loading 
             ? (
-                <div>
+                <div className='loading'>
                     Loading...
                 </div>
             )
